@@ -91,7 +91,7 @@ heating_mode_enable_entity: 'switch.esp32_spa_spa_heating_mode_control' # option
 
 ```
 
-The `Spa Heating Mode Control` and `Spa Filter Cycle Control` switches default to enabled and restore their last state after reboot. Turning either off prevents its related button presses, including the automatic boot-time read and the periodic set-temp refresh. Set `heating_mode_enable_entity` to the actual heating-mode control switch entity to hide the card's mode buttons when disabled; the filter-cycle selector remains an entity and is not displayed on this card.
+The `Spa Heating Mode Control` and `Spa Filter Cycle Control` switches default to enabled and restore their last state after reboot. Turning either off prevents its related button presses and automatic read. When heating-mode control is off, the periodic set-temp refresh still sends a single Temp press; it suppresses the additional presses used for mode detection. Set `heating_mode_enable_entity` to the actual heating-mode control switch entity to hide the card's mode buttons when disabled; the filter-cycle selector remains an entity and is not displayed on this card.
 
 If the card doesn't appear immediately, try a hard-refresh (Ctrl/Cmd+Shift+R) or clear the browser cache.
 
